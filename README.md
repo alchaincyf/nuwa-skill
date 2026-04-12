@@ -20,6 +20,12 @@
 
 [看效果](#效果示例) · [安装](#安装) · [它蒸馏了什么](#女娲蒸馏了什么) · [工作原理](#工作原理)
 
+## Hermes 适配（非 Claude Code 用户）
+
+如果你使用的是 Hermes（而不是 Claude Code / skills.sh），请看：
+
+- `hermes/README_HERMES.md`
+
 <br>
 
 **其他语言 / Other Languages:**
