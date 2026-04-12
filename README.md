@@ -208,7 +208,10 @@ nuwa-skill/
 ├── SKILL.md                      # 女娲本体
 ├── references/
 │   ├── extraction-framework.md   # 提炼方法论（想深入了解看这个）
-│   └── skill-template.md         # 生成Skill的模板
+│   ├── skill-template.md         # 生成人物Skill的模板
+│   ├── skill-template-topic.md   # 生成主题Skill的模板
+│   ├── agent-prompts.md          # 6个调研Agent的prompt模板
+│   └── tools-guide.md            # 辅助工具与信息获取指南
 └── examples/                          # 13个人物 + 1个主题，含完整调研数据
     ├── steve-jobs-perspective/        # ⭐ 乔布斯（含实战对话记录）
     ├── paul-graham-perspective/       # Paul Graham
