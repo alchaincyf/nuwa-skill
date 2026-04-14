@@ -153,7 +153,7 @@ npx skills add alchaincyf/nuwa-skill
 
 ## 已蒸馏人物
 
-女娲已蒸馏了13位人物 + 1个主题。每个都是独立的、可直接安装使用的Skill：
+女娲已蒸馏了14位人物 + 1个主题。每个都是独立的、可直接安装使用的Skill：
 
 ### 人物Skill
 
@@ -168,6 +168,7 @@ npx skills add alchaincyf/nuwa-skill
 | ⭐ **乔布斯** | 产品/设计/战略 | [steve-jobs-skill](https://github.com/alchaincyf/steve-jobs-skill) | `npx skills add alchaincyf/steve-jobs-skill` |
 | **马斯克** | 工程/成本/第一性原理 | [elon-musk-skill](https://github.com/alchaincyf/elon-musk-skill) | `npx skills add alchaincyf/elon-musk-skill` |
 | **芒格** | 投资/多元思维/逆向思考 | [munger-skill](https://github.com/alchaincyf/munger-skill) | `npx skills add alchaincyf/munger-skill` |
+| **巴菲特** | 投资/价值投资/商业判断/复利思维 | [buffett-skill](https://github.com/jimmysuncpt/buffett-skill) | `npx skills add jimmysuncpt/buffett-skill` |
 | **费曼** | 学习/教学/科学思维 | [feynman-skill](https://github.com/alchaincyf/feynman-skill) | `npx skills add alchaincyf/feynman-skill` |
 | **纳瓦尔** | 财富/杠杆/人生哲学 | [naval-skill](https://github.com/alchaincyf/naval-skill) | `npx skills add alchaincyf/naval-skill` |
 | **塔勒布** | 风险/反脆弱/不确定性 | [taleb-skill](https://github.com/alchaincyf/taleb-skill) | `npx skills add alchaincyf/taleb-skill` |
@@ -229,7 +230,7 @@ nuwa-skill/
 ├── references/
 │   ├── extraction-framework.md   # 提炼方法论（想深入了解看这个）
 │   └── skill-template.md         # 生成Skill的模板
-└── examples/                          # 13个人物 + 1个主题，含完整调研数据
+└── examples/                          # 14个人物 + 1个主题，含完整调研数据
     ├── steve-jobs-perspective/        # ⭐ 乔布斯（含实战对话记录）
     ├── paul-graham-perspective/       # Paul Graham
     ├── zhang-yiming-perspective/      # 张一鸣
@@ -239,6 +240,7 @@ nuwa-skill/
     ├── mrbeast-perspective/           # MrBeast
     ├── elon-musk-perspective/         # 马斯克
     ├── munger-perspective/            # 查理·芒格
+    ├── buffett-perspective/           # 沃伦·巴菲特
     ├── feynman-perspective/           # 费曼
     ├── naval-perspective/             # Naval Ravikant
     ├── taleb-perspective/             # 塔勒布
@@ -313,6 +315,6 @@ Not role-playing. Cognitive architecture extraction.
 
 **How it works**: Input a name → 6 parallel research agents → 40+ primary sources → triple-verified mental models → quality-validated SKILL.md
 
-**13 person skills + 1 topic skill included** — all with full research data. The Jobs example includes a complete multi-turn conversation demo.
+**14 person skills + 1 topic skill included** — all with full research data. The Jobs example includes a complete multi-turn conversation demo.
 
 See the Chinese README above for live examples and methodology.
