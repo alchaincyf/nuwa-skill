@@ -18,7 +18,7 @@
 So why stop at colleagues? Go distill Munger, Feynman, Musk.
 Just input a name — Nuwa handles research, extraction, and validation automatically.
 
-[Examples](#examples) · [Install](#install) · [What Nuwa Distills](#what-nuwa-distills) · [How It Works](#how-it-works)
+[Examples](#examples) · [Quick Start](#quick-start) · [Install](#install) · [What Nuwa Distills](#what-nuwa-distills) · [How It Works](#how-it-works)
 
 <br>
 
@@ -59,6 +59,16 @@ Musk    ❯ Don't think about how to reduce it yet. Calculate the physical minim
 ```
 
 This is not role-play. Naval uses his "desire as contract" mental model. Musk uses "asymptotic limit" reasoning. **They are not reciting quotes — they are analyzing your problem through the cognitive frameworks of these minds.**
+
+---
+
+## Quick Start
+
+```bash
+skillx run https://github.com/alchaincyf/nuwa-skill "Distill Dave Chappelle" --auto
+```
+
+> Haven't installed skillx? One line: `curl -fsSL https://skillx.run/install.sh | sh` ([other install options](https://skillx.run))
 
 ---
 
