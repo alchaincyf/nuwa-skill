@@ -18,7 +18,7 @@
 ¿Por qué quedarse con colegas? Destila a Munger, Feynman, Musk.
 Solo ingresa un nombre: Nuwa maneja la investigación, extracción y validación automáticamente.
 
-[Ejemplos](#ejemplos) · [Instalación](#instalación) · [Qué destila Nuwa](#qué-destila-nuwa) · [Cómo funciona](#cómo-funciona)
+[Ejemplos](#ejemplos) · [Uso rápido](#uso-rápido) · [Instalación](#instalación) · [Qué destila Nuwa](#qué-destila-nuwa) · [Cómo funciona](#cómo-funciona)
 
 <br>
 
@@ -61,6 +61,16 @@ Musk     ❯ No pienses en cómo reducirlo todavía. Calcula el mínimo físico 
 ```
 
 Esto no es juego de roles. Naval usa su modelo mental "deseo como contrato". Musk usa el razonamiento de "límite asintótico". **No están recitando citas — están analizando tu problema a través de sus marcos cognitivos.**
+
+---
+
+## Uso rápido
+
+```bash
+skillx run https://github.com/alchaincyf/nuwa-skill "Destila a Jorge Luis Borges" --auto
+```
+
+> ¿Aún no tienes skillx? En una línea: `curl -fsSL https://skillx.run/install.sh | sh` ([otras formas de instalar](https://skillx.run))
 
 ---
 
