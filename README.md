@@ -185,6 +185,26 @@ npx skills add alchaincyf/nuwa-skill
 
 ---
 
+## 达尔文.skill：让所有Skill持续进化
+
+<div align="center">
+
+<a href="https://github.com/alchaincyf/darwin-skill">
+<img src="https://raw.githubusercontent.com/alchaincyf/darwin-skill/master/assets/banner.svg" alt="达尔文.skill" width="600">
+</a>
+
+</div>
+
+女娲造Skill，**[达尔文](https://github.com/alchaincyf/darwin-skill)** 让Skill进化。
+
+受 Karpathy autoresearch 启发，达尔文.skill 用自主实验循环批量优化所有Skill：8维度评估、棘轮机制（只保留改进，自动回滚退步）、独立子agent评分。女娲的 Phase 5 双Agent精炼就内置了达尔文的评估体系，这也是女娲生成的Skill质量高的原因之一。
+
+```bash
+npx skills add alchaincyf/darwin-skill
+```
+
+---
+
 ## 工作原理
 
 输入一个名字后，女娲做四件事：
