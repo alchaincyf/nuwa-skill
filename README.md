@@ -2,6 +2,12 @@
 
 # 女娲.skill
 
+<p align="center">
+  <img src="assets/hero.gif" alt="nuwa-skill Hero Animation" />
+  <br/>
+  <sub>动画由 <a href="https://github.com/alchaincyf/huashu-design">huashu-design</a> skill 制作</sub>
+</p>
+
 > *「你想蒸馏的下一个员工，何必是同事」*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
