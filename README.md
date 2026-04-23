@@ -197,6 +197,15 @@ npx skills add alchaincyf/nuwa-skill
 
 人物Skill蒸馏一个人的思维方式；主题Skill蒸馏一个领域的方法论。每个仓库都包含完整的调研数据和效果示例对话。
 
+### 社区蒸馏
+
+以下Skill由社区成员使用女娲方法论蒸馏：
+
+| 人物 | 领域 | 独立仓库 | 一键安装 |
+|------|------|---------|---------|
+| **童锦程** | 情感/人际关系/人性洞察 | [tong-jincheng-skill](https://github.com/hotcoffeeshake/tong-jincheng-skill) | `npx skills add hotcoffeeshake/tong-jincheng-skill` |
+| **良子大胃袋** | 吃播/生活哲学/面对困境 | [liangzi-daweibag-skill](https://github.com/JFan5/liangzi-daweibag-skill) | `npx skills add JFan5/liangzi-daweibag-skill` |
+
 想蒸馏不在列表里的人或主题？安装女娲，说「蒸馏一个XXX」就行。
 
 ---
