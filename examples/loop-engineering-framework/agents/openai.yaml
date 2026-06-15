@@ -1,0 +1,4 @@
+interface:
+  display_name: "Loop Engineering Framework"
+  short_description: "Define and review autonomous agent loops"
+  default_prompt: "Use $loop-engineering-framework to define and review this agent loop system before I automate it."
