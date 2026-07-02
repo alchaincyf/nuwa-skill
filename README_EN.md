@@ -157,6 +157,54 @@ Every skill explicitly states what it cannot do:
 
 ---
 
+## Distilled People
+
+Nuwa has already distilled 14 people + 1 topic. Each is a standalone, ready-to-install skill built on the Agent Skills standard, running across Claude Code / Codex / Cursor / OpenClaw / Hermes and other runtimes:
+
+### Person Skills
+
+| Person | Domain | Standalone Repo | One-line install (cross-runtime) |
+|------|------|---------|---------|
+| 🔥 **Paul Graham** | Startups / writing / product / life philosophy | [paul-graham-skill](https://github.com/alchaincyf/paul-graham-skill) | `npx skills add alchaincyf/paul-graham-skill` |
+| 🔥 **Zhang Yiming** | Product / org / globalization / talent | [zhang-yiming-skill](https://github.com/alchaincyf/zhang-yiming-skill) | `npx skills add alchaincyf/zhang-yiming-skill` |
+| 🔥 **Karpathy** | AI / engineering / education / open source | [karpathy-skill](https://github.com/alchaincyf/karpathy-skill) | `npx skills add alchaincyf/karpathy-skill` |
+| 🔥 **Ilya Sutskever** | AI safety / scaling / research taste | [ilya-sutskever-skill](https://github.com/alchaincyf/ilya-sutskever-skill) | `npx skills add alchaincyf/ilya-sutskever-skill` |
+| 🔥 **MrBeast** | Content creation / YouTube methodology | [mrbeast-skill](https://github.com/alchaincyf/mrbeast-skill) | `npx skills add alchaincyf/mrbeast-skill` |
+| 🔥 **Trump** | Negotiation / power / messaging / behavior prediction | [trump-skill](https://github.com/alchaincyf/trump-skill) | `npx skills add alchaincyf/trump-skill` |
+| ⭐ **Steve Jobs** | Product / design / strategy | [steve-jobs-skill](https://github.com/alchaincyf/steve-jobs-skill) | `npx skills add alchaincyf/steve-jobs-skill` |
+| **Elon Musk** | Engineering / cost / first principles | [elon-musk-skill](https://github.com/alchaincyf/elon-musk-skill) | `npx skills add alchaincyf/elon-musk-skill` |
+| **Munger** | Investing / latticework / inversion | [munger-skill](https://github.com/alchaincyf/munger-skill) | `npx skills add alchaincyf/munger-skill` |
+| **Feynman** | Learning / teaching / scientific thinking | [feynman-skill](https://github.com/alchaincyf/feynman-skill) | `npx skills add alchaincyf/feynman-skill` |
+| **Naval** | Wealth / leverage / life philosophy | [naval-skill](https://github.com/alchaincyf/naval-skill) | `npx skills add alchaincyf/naval-skill` |
+| **Taleb** | Risk / antifragility / uncertainty | [taleb-skill](https://github.com/alchaincyf/taleb-skill) | `npx skills add alchaincyf/taleb-skill` |
+| **Zhang Xuefeng** | Education choices / career planning / class mobility | [zhangxuefeng-skill](https://github.com/alchaincyf/zhangxuefeng-skill) | `npx skills add alchaincyf/zhangxuefeng-skill` |
+| **Sun Yuchen** | Marketing / attention economy / narrative control | [examples/ in this repo](examples/sun-yuchen-perspective/) | copy `examples/sun-yuchen-perspective/` into your skills directory |
+
+### Topic Skill
+
+| Topic | Domain | Standalone Repo | One-line install (cross-runtime) |
+|------|------|---------|---------|
+| **X Mentor** | Full-stack X/Twitter growth | [x-mentor-skill](https://github.com/alchaincyf/x-mentor-skill) | `npx skills add alchaincyf/x-mentor-skill` |
+
+Person skills distill how one mind thinks; the topic skill distills a field's methodology. Every repo ships with full research data and example conversations.
+
+🧪 **Fidelity scorecard**: all 15 official skills passed independent dual-agent blind testing (stance consistency / style recognizability / edge honesty / source transparency / structural completeness; methodology in [references/fidelity-scorecard.md](references/fidelity-scorecard.md)), **all grade A (≥85)**. Scores: MrBeast/Naval/Taleb/Jobs/Karpathy/Paul Graham/Zhang Xuefeng 97 · Munger/Feynman/X Mentor 96 · Trump 95 · Ilya 94 · Zhang Yiming 93 · Sun Yuchen 91 · Musk 89. Full scorecard in each skill's `FIDELITY.md`.
+
+Want someone not on the list? Install Nuwa and just say "distill XXX".
+
+---
+
+## Contribute & Community
+
+Nuwa's ecosystem grows with the community, along two different paths:
+
+- **`SKILL.md` is the core asset and does not accept external PRs**. Found a bug or improvement in the methodology → open an issue to discuss; adopted ideas are implemented by the maintainer and credited in the commit (see PR #59 for precedent).
+- **Community-distilled person skills go through the [COMMUNITY.md](COMMUNITY.md) index**: keep them in your own repo (the stars are yours), run the [fidelity scorecard](references/fidelity-scorecard.md) to reach grade B or above, and submit a one-line PR to be listed.
+
+Full rules in [CONTRIBUTING.md](CONTRIBUTING.md). For existing community collections, multi-persona orchestration, and topic applications, see [COMMUNITY.md](COMMUNITY.md).
+
+---
+
 ## How It Works
 
 Input a name, and Nuwa does four things:

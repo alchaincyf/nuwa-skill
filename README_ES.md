@@ -159,6 +159,54 @@ Cada skill indica explícitamente lo que no puede hacer:
 
 ---
 
+## Personajes destilados
+
+Nuwa ya ha destilado 14 personas + 1 tema. Cada uno es un skill independiente y listo para instalar, construido sobre el estándar Agent Skills, y funciona en Claude Code / Codex / Cursor / OpenClaw / Hermes y otros runtimes:
+
+### Skills de personas
+
+| Persona | Dominio | Repo independiente | Instalación en una línea (multi-runtime) |
+|------|------|---------|---------|
+| 🔥 **Paul Graham** | Startups / escritura / producto / filosofía de vida | [paul-graham-skill](https://github.com/alchaincyf/paul-graham-skill) | `npx skills add alchaincyf/paul-graham-skill` |
+| 🔥 **Zhang Yiming** | Producto / organización / globalización / talento | [zhang-yiming-skill](https://github.com/alchaincyf/zhang-yiming-skill) | `npx skills add alchaincyf/zhang-yiming-skill` |
+| 🔥 **Karpathy** | IA / ingeniería / educación / código abierto | [karpathy-skill](https://github.com/alchaincyf/karpathy-skill) | `npx skills add alchaincyf/karpathy-skill` |
+| 🔥 **Ilya Sutskever** | Seguridad de IA / scaling / gusto en investigación | [ilya-sutskever-skill](https://github.com/alchaincyf/ilya-sutskever-skill) | `npx skills add alchaincyf/ilya-sutskever-skill` |
+| 🔥 **MrBeast** | Creación de contenido / metodología de YouTube | [mrbeast-skill](https://github.com/alchaincyf/mrbeast-skill) | `npx skills add alchaincyf/mrbeast-skill` |
+| 🔥 **Trump** | Negociación / poder / comunicación / predicción de comportamiento | [trump-skill](https://github.com/alchaincyf/trump-skill) | `npx skills add alchaincyf/trump-skill` |
+| ⭐ **Steve Jobs** | Producto / diseño / estrategia | [steve-jobs-skill](https://github.com/alchaincyf/steve-jobs-skill) | `npx skills add alchaincyf/steve-jobs-skill` |
+| **Elon Musk** | Ingeniería / costos / primeros principios | [elon-musk-skill](https://github.com/alchaincyf/elon-musk-skill) | `npx skills add alchaincyf/elon-musk-skill` |
+| **Munger** | Inversión / pensamiento multidisciplinar / pensamiento inverso | [munger-skill](https://github.com/alchaincyf/munger-skill) | `npx skills add alchaincyf/munger-skill` |
+| **Feynman** | Aprendizaje / enseñanza / pensamiento científico | [feynman-skill](https://github.com/alchaincyf/feynman-skill) | `npx skills add alchaincyf/feynman-skill` |
+| **Naval** | Riqueza / apalancamiento / filosofía de vida | [naval-skill](https://github.com/alchaincyf/naval-skill) | `npx skills add alchaincyf/naval-skill` |
+| **Taleb** | Riesgo / antifragilidad / incertidumbre | [taleb-skill](https://github.com/alchaincyf/taleb-skill) | `npx skills add alchaincyf/taleb-skill` |
+| **Zhang Xuefeng** | Elecciones educativas / planificación de carrera / movilidad social | [zhangxuefeng-skill](https://github.com/alchaincyf/zhangxuefeng-skill) | `npx skills add alchaincyf/zhangxuefeng-skill` |
+| **Sun Yuchen** | Marketing / economía de la atención / control narrativo | [examples/ en este repo](examples/sun-yuchen-perspective/) | copia `examples/sun-yuchen-perspective/` en tu directorio de skills |
+
+### Skill temático
+
+| Tema | Dominio | Repo independiente | Instalación en una línea (multi-runtime) |
+|------|------|---------|---------|
+| **X Mentor** | Crecimiento full-stack en X/Twitter | [x-mentor-skill](https://github.com/alchaincyf/x-mentor-skill) | `npx skills add alchaincyf/x-mentor-skill` |
+
+Los skills de personas destilan cómo piensa una mente; el skill temático destila la metodología de un campo. Cada repo incluye datos completos de investigación y conversaciones de ejemplo.
+
+🧪 **Tarjeta de fidelidad**: los 15 skills oficiales pasaron pruebas ciegas independientes con doble agente (consistencia de postura / reconocibilidad de estilo / honestidad en los límites / transparencia de fuentes / completitud estructural; metodología en [references/fidelity-scorecard.md](references/fidelity-scorecard.md)), **todos grado A (≥85)**. Puntuaciones: MrBeast/Naval/Taleb/Jobs/Karpathy/Paul Graham/Zhang Xuefeng 97 · Munger/Feynman/X Mentor 96 · Trump 95 · Ilya 94 · Zhang Yiming 93 · Sun Yuchen 91 · Musk 89. Tarjeta completa en el `FIDELITY.md` de cada skill.
+
+¿Quieres a alguien que no está en la lista? Instala Nuwa y solo di «destila a XXX».
+
+---
+
+## Contribuir y comunidad
+
+El ecosistema de Nuwa crece con la comunidad, por dos caminos distintos:
+
+- **`SKILL.md` es el activo central y no acepta PRs externos**. ¿Encontraste un bug o mejora en la metodología? → abre un issue para discutir; las ideas adoptadas las implementa el mantenedor y se agradecen en el commit (precedente en el PR #59).
+- **Los skills de personas destilados por la comunidad pasan por el índice [COMMUNITY.md](COMMUNITY.md)**: mantenlos en tu propio repo (las estrellas son tuyas), pasa la [tarjeta de fidelidad](references/fidelity-scorecard.md) para alcanzar grado B o superior, y envía un PR de una línea para ser incluido.
+
+Reglas completas en [CONTRIBUTING.md](CONTRIBUTING.md). Para colecciones comunitarias existentes, orquestación multi-persona y aplicaciones temáticas, consulta [COMMUNITY.md](COMMUNITY.md).
+
+---
+
 ## Cómo funciona
 
 Ingresa un nombre y Nuwa hace cuatro cosas:

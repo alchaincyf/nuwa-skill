@@ -220,7 +220,7 @@ git clone https://github.com/alchaincyf/nuwa-skill <上面对应的路径>
 
 人物Skill蒸馏一个人的思维方式；主题Skill蒸馏一个领域的方法论。每个仓库都包含完整的调研数据和效果示例对话。
 
-🧪 **保真度评分卡**已上线：每个人物Skill出厂前由独立双agent盲测（立场一致性/风格辨识度/边缘诚实度/来源透明度/结构完整度），方法论见 [references/fidelity-scorecard.md](references/fidelity-scorecard.md)。首批：[芒格 96/100·A](examples/munger-perspective/FIDELITY.md)、[MrBeast 97/100·A](examples/mrbeast-perspective/FIDELITY.md)，逐步覆盖全部人物。
+🧪 **保真度评分卡**：15个官方Skill已全部通过独立双agent盲测（立场一致性/风格辨识度/边缘诚实度/来源透明度/结构完整度，方法论见 [references/fidelity-scorecard.md](references/fidelity-scorecard.md)），**全员A级（≥85分）**。各分数：MrBeast/纳瓦尔/塔勒布/乔布斯/Karpathy/Paul Graham/张雪峰 97 · 芒格/费曼/X导师 96 · 特朗普 95 · Ilya 94 · 张一鸣 93 · 孙宇晨 91 · 马斯克 89。完整评分卡见各skill目录内的 `FIDELITY.md`。
 
 想蒸馏不在列表里的人或主题？安装女娲，说「蒸馏一个XXX」就行。
 
