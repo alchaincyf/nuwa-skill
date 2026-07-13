@@ -12,6 +12,7 @@
 | [xixu-me/awesome-persona-distill-skills](https://github.com/xixu-me/awesome-persona-distill-skills) | 人物/关系/纪念场景的persona skill策展合集 |
 | [Panmax/awesome-nuwa](https://github.com/Panmax/awesome-nuwa) | 135+人物思维框架合集：哲学家、企业家、科学家全品类 |
 | [momozi1996/awesome-ai-persona-skills](https://github.com/momozi1996/awesome-ai-persona-skills) | 100+人格蒸馏合集，含刘慈欣、余华、莫言等中国作家专辑 |
+| [oppenheimor/george-hotz-skills](https://github.com/oppenheimor/george-hotz-skills) | George Hotz/geohot黑客工程思维：硬技术拆解、开源基础设施、AI反hype、最小可运行验证 |
 
 ## 多人格编排
 
