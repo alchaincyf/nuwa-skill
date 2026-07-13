@@ -25,6 +25,7 @@
 |------|------|
 | [Future3lab/iran-skill](https://github.com/Future3lab/iran-skill) | 119文件的地缘政治分析OS，2500年波斯视角 |
 | [JerryZ01/qiuyuan-skill](https://github.com/JerryZ01/qiuyuan-skill) | 球员/教练思维蒸馏系统，女娲流程在体育领域的改编 |
+| [zx029w/zhuangxiu-laoshi-skill](https://github.com/zx029w/zhuangxiu-laoshi-skill) | 陈工20年装修实战思维蒸馏：覆盖报价/合同/增项/施工/环保/翻车等11领域避坑判断 |
 
 ## 收录你的项目
 
@@ -34,3 +35,4 @@
 - 合集/工具/编排项目：README说清楚与女娲的关系，无伦理红线问题
 
 一行格式：`| [owner/repo](链接) | 一句话说明 |`
+
