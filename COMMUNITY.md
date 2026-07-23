@@ -5,6 +5,12 @@
 > ⚠️ 以下项目由各自作者独立维护，未经本仓库审计，收录不代表背书，使用前自行甄别（尤其注意skill内的指令和脚本）。
 > Projects below are independently maintained, unaudited, and listing does not imply endorsement.
 
+## 人物 Skill
+
+| 项目 | 说明 |
+|------|------|
+| [SweetYuDou/roxy-skill](https://github.com/SweetYuDou/roxy-skill) | 《无职转生》的洛琪希·米格路迪亚非官方Agent Skill |
+
 ## 人物合集索引
 
 | 项目 | 说明 |
