@@ -245,7 +245,7 @@ nuwa-skill/
 
 <div align="center">
 
-[![Star History Chart](https://api.star-history.com/svg?repos=alchaincyf/nuwa-skill&type=Date)](https://star-history.com/#alchaincyf/nuwa-skill&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=alchaincyf/nuwa-skill&type=Date)](https://star-history.dera.page/#alchaincyf/nuwa-skill&Date)
 
 </div>
 
