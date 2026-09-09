@@ -14,6 +14,7 @@
 | [momozi1996/awesome-ai-persona-skills](https://github.com/momozi1996/awesome-ai-persona-skills) | 100+人格蒸馏合集，含刘慈欣、余华、莫言等中国作家专辑 |
 | [tens1x/gefei-perspective-skill](https://github.com/tens1x/gefei-perspective-skill) | 哥飞视角 persona skill：出海工具站、SEO、AdSense、付费流量、定价与独立开发执行框架 |
 | [oppenheimor/george-hotz-skills](https://github.com/oppenheimor/george-hotz-skills) | George Hotz/geohot黑客工程思维：硬技术拆解、开源基础设施、AI反hype、最小可运行验证 |
+| [Rockynowzzz/Jung-Adler-Freud-and-Feng](https://github.com/Rockynowzzz/Jung-Adler-Freud-and-Feng) | 心理学三巨头（弗洛伊德/荣格/阿德勒）+ 中文互联网"弗洛伊峰"，四人思维操作系统合集，全员保真度 A 级 |
 
 ## 多人格编排
 
