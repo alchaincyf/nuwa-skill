@@ -2,12 +2,13 @@
 """
 自动检查生成的SKILL.md是否通过Phase 4质量标准。
 对照通过标准表格逐项检查，输出通过/不通过和具体原因。
+动态层检查：遗忘窗口、轨迹路径、窗口内禁止为本人近况现搜、升格需确认，缺任一项则不通过。
 
 用法:
     python3 quality_check.py <SKILL.md路径>
 
 示例:
-    python3 quality_check.py .claude/skills/elon-musk-perspective/SKILL.md
+    python3 quality_check.py .agents/skills/elon-musk-perspective/SKILL.md
 """
 
 import sys
@@ -82,6 +83,22 @@ def check_tensions(content: str) -> tuple[bool, str]:
     return passed, f"内在张力: {tension_markers}处 {'✅' if passed else '❌ (应≥2处)'}"
 
 
+def check_dynamic_layer(content: str) -> tuple[bool, str]:
+    """检查人物 Skill 的动态层。缺任一项则不通过。"""
+    missing = []
+    if not re.search(r'遗忘窗口', content):
+        missing.append('遗忘窗口')
+    if not re.search(r'references/trajectory/log\.md', content):
+        missing.append('轨迹路径')
+    if not re.search(r'窗口内禁止为本人近况现搜', content):
+        missing.append('窗口内禁止为本人近况现搜')
+    if not re.search(r'升格模型', content) or not re.search(r'确认', content):
+        missing.append('升格需确认')
+    if missing:
+        return False, f"❌ 缺少：{'、'.join(missing)}"
+    return True, "遗忘窗口 / 轨迹路径 / 窗口内禁止现搜 / 升格需确认 ✅"
+
+
 def check_primary_sources(content: str) -> tuple[bool, str]:
     """检查一手来源占比"""
     # 找调研来源section
@@ -120,6 +137,7 @@ def main():
         ("诚实边界", check_honest_boundary),
         ("内在张力", check_tensions),
         ("一手来源占比", check_primary_sources),
+        ("动态层", check_dynamic_layer),
     ]
 
     print(f"质量检查: {skill_path.name}")

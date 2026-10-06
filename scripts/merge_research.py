@@ -8,7 +8,7 @@
     python3 merge_research.py <skill目录路径>
 
 示例:
-    python3 merge_research.py .claude/skills/elon-musk-perspective
+    python3 merge_research.py .agents/skills/elon-musk-perspective
 
 输出: 打印markdown格式的摘要表格到stdout
 """

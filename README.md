@@ -124,6 +124,7 @@ npx skills add alchaincyf/nuwa-skill
 
 | Runtime | 安装路径 |
 |---|---|
+| Goose | 项目内 `.agents/skills/nuwa-skill/`，或 `~/.agents/skills/nuwa-skill/` |
 | Claude Code | `~/.claude/skills/nuwa-skill/` |
 | Codex CLI | `~/.codex/skills/nuwa-skill/` |
 | Cursor | `~/.cursor/skills/nuwa-skill/` |
@@ -268,6 +269,8 @@ npx skills add alchaincyf/darwin-skill
 **3. 构建Skill**——3-7个心智模型 + 5-10条决策启发式 + 表达DNA + 价值观与反模式 + 诚实边界，写入SKILL.md。
 
 **4. 质量验证**——拿3个此人公开回答过的问题测试，方向一致才通过。再用1个他没讨论过的问题测试，Skill应该表现出适度不确定而非斩钉截铁。
+
+新生成的人物 Skill 把轨迹当记忆：21 天内的本人经历只从轨迹里说，像刚发生过；更早的事可以查，并说成回想。配对的情报 Skill 按日程把近期言行写入轨迹，对话里的人物不会自己去搜刚开过的发布会。
 
 完整方法论在 `references/extraction-framework.md`。
 
