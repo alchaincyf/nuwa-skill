@@ -68,8 +68,8 @@ def check_honest_boundary(content: str) -> tuple[bool, str]:
         return False, "❌ 未找到诚实边界section"
 
     boundary_text = boundary_match.group(1)
-    # 计算列表项
-    items = re.findall(r'^[-*]\s+', boundary_text, re.MULTILINE)
+    # 计算列表项（同时识别 - * + 无序列表和 1. 1、 1) 编号列表）
+    items = re.findall(r'^(?:[-*+]|\d+[.、)])\s+', boundary_text, re.MULTILINE)
     count = len(items)
     passed = count >= 3
     return passed, f"诚实边界: {count}条 {'✅' if passed else '❌ (应≥3条)'}"
