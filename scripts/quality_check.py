@@ -85,11 +85,18 @@ def check_tensions(content: str) -> tuple[bool, str]:
 def check_primary_sources(content: str) -> tuple[bool, str]:
     """检查一手来源占比"""
     # 找调研来源section
-    source_section = re.search(r'(?:##\s+.*来源|## Source|## Reference)(.*?)(?=\n##\s|\Z)', content, re.DOTALL | re.IGNORECASE)
+    source_section = re.search(
+        r'^##[ \t]+[^\r\n]*(?:来源|Source|Reference)[^\r\n]*\r?$',
+        content, re.MULTILINE | re.IGNORECASE,
+    )
     if not source_section:
         return True, "未找到来源section（跳过检查）"
 
-    source_text = source_section.group(1)
+    # 只匹配同级标题行，保留 ### 一手/二手来源子节，避免跨行吞掉正文。
+    source_text = content[source_section.end():]
+    next_section = re.search(r'^##[ \t]+', source_text, re.MULTILINE)
+    if next_section:
+        source_text = source_text[:next_section.start()]
     primary = len(re.findall(r'一手|primary|本人著作|原始', source_text, re.IGNORECASE))
     secondary = len(re.findall(r'二手|secondary|转述|评论', source_text, re.IGNORECASE))
     total = primary + secondary
