@@ -60,16 +60,24 @@ def check_expression_dna(content: str) -> tuple[bool, str]:
     return passed, f"表达DNA特征: {style_markers}项 {'✅' if passed else '❌ (应≥3项)'}"
 
 
+def find_section(content: str, *names: str) -> str | None:
+    """返回标题行（## 级）包含任一名称的section正文，直到下一个 ## 标题。
+
+    只在标题行内匹配，不跨行：正文里提到「诚实边界」不会被误当成标题。
+    """
+    pattern = r'^##\s[^\n]*(?:' + '|'.join(map(re.escape, names)) + r')[^\n]*\n(.*?)(?=^##\s|\Z)'
+    match = re.search(pattern, content, re.DOTALL | re.MULTILINE | re.IGNORECASE)
+    return match.group(1) if match else None
+
+
 def check_honest_boundary(content: str) -> tuple[bool, str]:
     """检查诚实边界（至少3条）"""
-    # 找诚实边界section
-    boundary_match = re.search(r'(?:##\s+.*诚实边界|## Honest Boundary)(.*?)(?=\n##\s|\Z)', content, re.DOTALL | re.IGNORECASE)
-    if not boundary_match:
+    boundary_text = find_section(content, '诚实边界', '誠實邊界', 'Honest Boundar')
+    if boundary_text is None:
         return False, "❌ 未找到诚实边界section"
 
-    boundary_text = boundary_match.group(1)
-    # 计算列表项
-    items = re.findall(r'^[-*]\s+', boundary_text, re.MULTILINE)
+    # 计算顶层列表项：无序（- / *）和有序（1. / 1)）都算，缩进的子项不算
+    items = re.findall(r'^(?:[-*]|\d+[.)])\s+', boundary_text, re.MULTILINE)
     count = len(items)
     passed = count >= 3
     return passed, f"诚实边界: {count}条 {'✅' if passed else '❌ (应≥3条)'}"
