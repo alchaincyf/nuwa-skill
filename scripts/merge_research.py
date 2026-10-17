@@ -17,6 +17,17 @@ import sys
 import re
 from pathlib import Path
 
+
+# Windows consoles commonly default stdout to a legacy code page (GBK/CP936 on
+# zh-CN systems). This script prints emoji and CJK text, which raises
+# UnicodeEncodeError there and aborts the run before any result is shown.
+# Force UTF-8 output; degrade gracefully if the stream cannot be reconfigured.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, OSError):
+        pass
+
 AGENTS = {
     '01-writings': '著作',
     '02-conversations': '对话',
