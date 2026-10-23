@@ -70,6 +70,7 @@
 **Step 3: 4A Framework × Proven Approaches（生成标题矩阵）**
 
 4A是内容角度：
+
 | 角度 | 含义 | 常见格式 |
 |------|------|----------|
 | **Actionable** | 教读者怎么做 | Tips, Hacks, Resources, Guides, How-to |
