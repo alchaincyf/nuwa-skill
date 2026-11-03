@@ -7,13 +7,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Compatible-blue)](https://skills.sh)
-[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#install)
+[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes%20·%20DeepSeek%20Harness-blueviolet)](#install)
 
 <br>
 
 **Nuwa distills the thinking of anyone — let Musk, Naval, Munger, and Feynman work for you.**
 
-<sub>Built on the open [Agent Skills](https://agentskills.io) standard. Runs in Claude Code, Codex, Cursor, OpenClaw, Hermes Agent, CodeBuddy, Workbuddy, Gemini CLI, OpenCode, and 50+ skills-compatible runtimes.</sub>
+<sub>Built on the open [Agent Skills](https://agentskills.io) standard. Runs in Claude Code, Codex, Cursor, OpenClaw, Hermes Agent, CodeBuddy, Workbuddy, Gemini CLI, OpenCode, DeepSeek Harness, and 50+ skills-compatible runtimes.</sub>
 
 <br>
 
@@ -96,6 +96,7 @@ It auto-detects your runtime and places the skill in the correct directory. Add 
 | Codex CLI | `~/.codex/skills/nuwa-skill/` |
 | Cursor | `~/.cursor/skills/nuwa-skill/` |
 | OpenClaw | `~/.openclaw/workspace/skills/nuwa-skill/` |
+| DeepSeek Harness | `~/.dsh/skills/nuwa-skill/` |
 | Hermes Agent | run `tools/install_hermes_skill.py` |
 | Any other | clone into that runtime's `skills/` directory |
 
@@ -104,6 +105,16 @@ git clone https://github.com/alchaincyf/nuwa-skill <path-above>
 ```
 
 </details>
+
+### DeepSeek Harness plugin
+
+Nuwa is also a [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH) plugin. Add it to a profile (`web` here) with one command, then restart DSH:
+
+```bash
+dsh plugin --profile web add github:alchaincyf/nuwa-skill
+```
+
+Remove with `dsh plugin --profile web remove huashu-nuwa`. Person skills distilled inside DSH are written to the project's `.dsh/skills/`, where DSH loads them automatically.
 
 ### Option 3: Use as a reference (no runtime needed)
 

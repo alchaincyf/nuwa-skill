@@ -10,7 +10,7 @@ metadata:
   author: "花叔"
   homepage: "https://github.com/alchaincyf"
   repository: "https://github.com/alchaincyf/nuwa-skill"
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # 女娲 · Skill造人术

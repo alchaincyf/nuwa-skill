@@ -1,7 +1,8 @@
 {
   "name": "huashu-nuwa",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "女娲：把任何人蒸馏成可运行的思维 Skill。",
+  "icon": "./assets/icon.png",
   "license": "MIT",
   "author": "花叔",
   "homepage": "https://github.com/alchaincyf/nuwa-skill",
@@ -19,7 +20,8 @@
     "references",
     "scripts",
     "examples",
-    "cordis.patch.yml"
+    "cordis.patch.yml",
+    "assets/icon.png"
   ],
   "dsh": {
     "bundle": {

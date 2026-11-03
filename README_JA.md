@@ -7,13 +7,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Compatible-blue)](https://skills.sh)
-[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#インストール)
+[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes%20·%20DeepSeek%20Harness-blueviolet)](#インストール)
 
 <br>
 
 **Nuwaは誰の思考法でも蒸留できる。マスク、Naval、マンガー、ファインマンをあなたのために働かせよう。**
 
-<sub>オープンな [Agent Skills](https://agentskills.io) 標準に基づき構築。Claude Code、Codex、Cursor、OpenClaw、Hermes Agent、CodeBuddy、Workbuddy、Gemini CLI、OpenCode など 50+ の skills 互換 runtime で動作。</sub>
+<sub>オープンな [Agent Skills](https://agentskills.io) 標準に基づき構築。Claude Code、Codex、Cursor、OpenClaw、Hermes Agent、CodeBuddy、Workbuddy、Gemini CLI、OpenCode、DeepSeek Harness など 50+ の skills 互換 runtime で動作。</sub>
 
 <br>
 
@@ -99,6 +99,7 @@ npx skills add alchaincyf/nuwa-skill
 | Codex CLI | `~/.codex/skills/nuwa-skill/` |
 | Cursor | `~/.cursor/skills/nuwa-skill/` |
 | OpenClaw | `~/.openclaw/workspace/skills/nuwa-skill/` |
+| DeepSeek Harness | `~/.dsh/skills/nuwa-skill/` |
 | Hermes Agent | `tools/install_hermes_skill.py` を実行 |
 | その他 | 該当 runtime の `skills/` ディレクトリに clone |
 
@@ -107,6 +108,16 @@ git clone https://github.com/alchaincyf/nuwa-skill <上記のパス>
 ```
 
 </details>
+
+### DeepSeek Harness プラグイン
+
+Nuwa は [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）のプラグインでもある。コマンド1行で profile（ここでは `web`）に追加し、DSH を再起動すれば使える：
+
+```bash
+dsh plugin --profile web add github:alchaincyf/nuwa-skill
+```
+
+アンインストール：`dsh plugin --profile web remove huashu-nuwa`。DSH 内で蒸留した人物 Skill はプロジェクトの `.dsh/skills/` に書き込まれ、DSH が自動で読み込む。
 
 ### 方法3：参考資料として使う（runtime 不要）
 

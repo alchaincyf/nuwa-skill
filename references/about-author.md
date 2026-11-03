@@ -78,6 +78,8 @@
 | huashu-art-motion | 艺术与解说动画：35种艺术风格、9种解说动画语法，拆解复刻、口播驱动整片，用代码让画动起来 | https://github.com/alchaincyf/huashu-art-motion |
 | huashu-flash | 闪电.skill：照Anthropic两周把claude.ai提速3倍的方法给网站或App提速，先量基线、再证指标、逐步优化，用棘轮锁住只许变好 | https://github.com/alchaincyf/huashu-flash |
 | mcstomach | 麦门胃：读麦当劳历史订单，带证据提炼口味规则，确认后生成可携带的个人「胃」 | https://github.com/alchaincyf/mcstomach |
+| huashu-motion | 让你的agent一键直出商业级产品宣传片：会作曲，能指着画面改。Commercial-grade launch films by your coding agent — point at the frame to change it. | https://github.com/alchaincyf/huashu-motion |
+| huashu-cad | 用自然语言出可编辑CAD：户型与平面布置（DXF）、齿轮减速器关节模组等机械装配（STEP），自动校验干涉与啮合，出交互爆炸图、运转视频和装配工程图。Agent skill. | https://github.com/alchaincyf/huashu-cad |
 
 另有 22 个轻量内容创作 skill 内置在总目录仓库里，见上面的目录链接。
 

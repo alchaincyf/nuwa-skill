@@ -7,13 +7,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Compatible-blue)](https://skills.sh)
-[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#설치)
+[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes%20·%20DeepSeek%20Harness-blueviolet)](#설치)
 
 <br>
 
 **Nuwa는 누구의 사고방식도 증류한다. 머스크, 나발, 멍거, 파인만을 당신을 위해 일하게 하라.**
 
-<sub>오픈된 [Agent Skills](https://agentskills.io) 표준 기반. Claude Code, Codex, Cursor, OpenClaw, Hermes Agent, CodeBuddy, Workbuddy, Gemini CLI, OpenCode 등 50+ 개 skills 호환 runtime 에서 작동.</sub>
+<sub>오픈된 [Agent Skills](https://agentskills.io) 표준 기반. Claude Code, Codex, Cursor, OpenClaw, Hermes Agent, CodeBuddy, Workbuddy, Gemini CLI, OpenCode, DeepSeek Harness 등 50+ 개 skills 호환 runtime 에서 작동.</sub>
 
 <br>
 
@@ -98,6 +98,7 @@ npx skills add alchaincyf/nuwa-skill
 | Codex CLI | `~/.codex/skills/nuwa-skill/` |
 | Cursor | `~/.cursor/skills/nuwa-skill/` |
 | OpenClaw | `~/.openclaw/workspace/skills/nuwa-skill/` |
+| DeepSeek Harness | `~/.dsh/skills/nuwa-skill/` |
 | Hermes Agent | `tools/install_hermes_skill.py` 실행 |
 | 기타 | 해당 runtime의 `skills/` 디렉터리에 clone |
 
@@ -106,6 +107,16 @@ git clone https://github.com/alchaincyf/nuwa-skill <위 경로>
 ```
 
 </details>
+
+### DeepSeek Harness 플러그인
+
+Nuwa는 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)(DSH) 플러그인이기도 하다. 명령 한 줄로 profile(여기서는 `web`)에 추가하고 DSH를 다시 시작하면 된다:
+
+```bash
+dsh plugin --profile web add github:alchaincyf/nuwa-skill
+```
+
+제거: `dsh plugin --profile web remove huashu-nuwa`. DSH 안에서 증류한 인물 Skill은 프로젝트의 `.dsh/skills/`에 저장되고, DSH가 자동으로 불러온다.
 
 ### 방법3: 참고 자료로 사용 (runtime 불필요)
 

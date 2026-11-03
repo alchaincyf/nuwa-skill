@@ -7,13 +7,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io)
 [![skills.sh](https://img.shields.io/badge/skills.sh-Compatible-blue)](https://skills.sh)
-[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#instalación)
+[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes%20·%20DeepSeek%20Harness-blueviolet)](#instalación)
 
 <br>
 
 **Nuwa destila la forma de pensar de cualquier persona. Haz que Musk, Naval, Munger y Feynman trabajen para ti.**
 
-<sub>Construido sobre el estándar abierto [Agent Skills](https://agentskills.io). Funciona en Claude Code, Codex, Cursor, OpenClaw, Hermes Agent, CodeBuddy, Workbuddy, Gemini CLI, OpenCode y 50+ runtimes compatibles con skills.</sub>
+<sub>Construido sobre el estándar abierto [Agent Skills](https://agentskills.io). Funciona en Claude Code, Codex, Cursor, OpenClaw, Hermes Agent, CodeBuddy, Workbuddy, Gemini CLI, OpenCode, DeepSeek Harness y 50+ runtimes compatibles con skills.</sub>
 
 <br>
 
@@ -98,6 +98,7 @@ Auto-detecta tu runtime y coloca el skill en el directorio correcto. Agrega `-a 
 | Codex CLI | `~/.codex/skills/nuwa-skill/` |
 | Cursor | `~/.cursor/skills/nuwa-skill/` |
 | OpenClaw | `~/.openclaw/workspace/skills/nuwa-skill/` |
+| DeepSeek Harness | `~/.dsh/skills/nuwa-skill/` |
 | Hermes Agent | ejecuta `tools/install_hermes_skill.py` |
 | Cualquier otro | clonar en el directorio `skills/` de ese runtime |
 
@@ -106,6 +107,16 @@ git clone https://github.com/alchaincyf/nuwa-skill <ruta-de-arriba>
 ```
 
 </details>
+
+### Plugin para DeepSeek Harness
+
+Nuwa también es un plugin de [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH). Añádelo a un perfil (aquí `web`) con un solo comando y reinicia DSH:
+
+```bash
+dsh plugin --profile web add github:alchaincyf/nuwa-skill
+```
+
+Para quitarlo: `dsh plugin --profile web remove huashu-nuwa`. Los skills de personas destilados dentro de DSH se guardan en `.dsh/skills/` del proyecto, y DSH los carga automáticamente.
 
 ### Opción 3: Usar como referencia (sin runtime)
 
