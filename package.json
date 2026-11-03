@@ -1,0 +1,29 @@
+{
+  "name": "huashu-nuwa",
+  "version": "1.0.0",
+  "description": "女娲：把任何人蒸馏成可运行的思维 Skill。",
+  "license": "MIT",
+  "author": "花叔",
+  "homepage": "https://github.com/alchaincyf/nuwa-skill",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchaincyf/nuwa-skill.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "agent-skill"
+  ],
+  "files": [
+    "SKILL.md",
+    "references",
+    "scripts",
+    "examples",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

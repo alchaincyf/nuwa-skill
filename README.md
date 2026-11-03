@@ -128,6 +128,7 @@ npx skills add alchaincyf/nuwa-skill
 | Codex CLI | `~/.codex/skills/nuwa-skill/` |
 | Cursor | `~/.cursor/skills/nuwa-skill/` |
 | OpenClaw | `~/.openclaw/workspace/skills/nuwa-skill/` |
+| DeepSeek Harness | `~/.dsh/skills/nuwa-skill/` |
 | Hermes Agent | 跑 `tools/install_hermes_skill.py` |
 | 其他 runtime | clone 到对应 runtime 的 `skills/` 目录 |
 
@@ -136,6 +137,16 @@ git clone https://github.com/alchaincyf/nuwa-skill <上面对应的路径>
 ```
 
 </details>
+
+### DeepSeek Harness 插件
+
+女娲也是一个 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）插件，一行命令装进你的 profile（以 `web` 为例），重新启动 DSH 后生效：
+
+```bash
+dsh plugin --profile web add github:alchaincyf/nuwa-skill
+```
+
+卸载：`dsh plugin --profile web remove huashu-nuwa`。在 DSH 里蒸馏出的人物 Skill 会写进项目的 `.dsh/skills/`，DSH 会自动加载。
 
 ### 方式三：作为参考资料使用
 
@@ -370,6 +381,8 @@ Nuwa is an [Agent Skill](https://agentskills.io) that extracts cognitive framewo
 Not role-playing. Cognitive architecture extraction.
 
 **Install** (cross-runtime, auto-detects your agent): `npx skills add alchaincyf/nuwa-skill`
+
+**DeepSeek Harness**: `dsh plugin --profile web add github:alchaincyf/nuwa-skill`, then restart DSH. Remove with `dsh plugin --profile web remove huashu-nuwa`.
 
 **How it works**: Input a name → 6 parallel research agents → 40+ primary sources → triple-verified mental models → quality-validated SKILL.md
 

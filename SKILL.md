@@ -34,6 +34,8 @@ metadata:
 
 ## 执行流程
 
+**Skill 目录**：下文的 `.claude/skills/` 是 Claude Code 的目录。在 DeepSeek Harness 里一律换成 `.dsh/skills/`（DSH 不扫描 `.claude/skills/`，写在那里的 Skill 加载不到）；其他宿主同理，换成它扫描的 skill 目录。
+
 ### Phase 0: 入口分流
 
 收到用户输入后，先判断属于哪条路径：

@@ -1,0 +1,8 @@
+# DeepSeek Harness 插件入口：复用 DSH 自带的文件系统 skill 提供方，
+# 把本包所在的 node_modules 目录当作 skill 根目录，从而发现本包根部的 SKILL.md。
+- insert:
+    - id: huashu-nuwa-skill
+      name: '@deepseek-ai/dsh-skill-filesystem'
+      config:
+        providerName: huashu-nuwa
+        bundledSkillDir: !!js process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('huashu-nuwa/package.json')))
