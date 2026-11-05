@@ -160,6 +160,7 @@ metadata:
 ```
 .claude/skills/[person-name]-perspective/
 ├── SKILL.md                          # 最终产物
+├── cognitive-config.yaml             # 认知配置 IR v0.1（darwin/freud 读）
 ├── scripts/                          # 工具脚本（字幕下载/清洗/质量检查）
 └── references/
     ├── research/                     # 每个Agent的调研结果（必存）
@@ -527,6 +528,47 @@ Phase 1启动前，**主动扫描 `.claude/skills/` 目录**，检查是否有�
 
 ---
 
+### Phase 3.5: 认知配置 IR 双轨产出
+
+SKILL.md 生成后，把 Phase 2 的提炼物同步映射为 `cognitive-config.yaml`（与 SKILL.md 同目录），
+按 Cognitive Config IR 规范 v0.1（见 PR 附带的 `cognitive-config-ir-v0.1.md`）。
+
+**nuwa → IR 映射表**：
+
+| Phase 2 提炼物 | IR 字段 | 转换规则 |
+|---|---|---|
+| 身份卡「我是谁」 | `identity.one_liner` / `identity.anchor` | anchor = `person_<name>`；`role_space_ref` = `<person>-perspective` |
+| 核心信念（复现≥3次的论点） | `beliefs` | 转正面定义句式，取 2-5 条，按排他性排序 |
+| 价值观优先级 / 对「好」的定义 | `taste_standard` | ≤5 条，保留可验证的品味判断 |
+| 决策启发式（5-10 条） | `decision_heuristics` | 必须改写为 `if ...: ...` 格式；容量卫生上限 7 条，超出部分只留 SKILL.md |
+| 表达DNA 的基调 | `emotion_calibration` | 枚举映射：干燥精确→calm_precise；批判追问→skeptical_inquisitive；沉浸叙事→immersive_authentic |
+| 反例黑名单（绝不要做） | 不入 IR | 留在 SKILL.md（darwin rubric dim9 要求反例清单）；IR 只存正面认知资产 |
+| 诚实边界 / 局限性 | 不入 IR | 属 SKILL.md；IR 的 provenance 记录 distilled_by 即可 |
+
+**序列化硬规则（对齐六原理）**：
+
+1. **正面定义**：beliefs/taste 全部「他相信/他重视」句式；被转换的否定原句若需审计记入
+   `negative_frames`，正常应为空
+2. **容量卫生**：beliefs + decision_heuristics ≤ 7 条——IR 是进化种子不是全量镜像，
+   其余启发式留在 SKILL.md
+3. **锚定精度**：启发式必须 `if ...: ...`；写不出条件形式的降级为 beliefs 或留在 SKILL.md
+4. **可进化**：不写步骤、不写案例——案例在 SKILL.md，IR 只存身份/信念/品味/启发式
+
+**产出与校验**：
+
+- 标准/深度档：默认产出；快速档：用户要求时产出
+- 写盘前自检：`schema_version=0.1`、`fitness_function` 权重和=1、单维权重 ≤0.5
+- 🔴 CHECKPOINT：IR 与 SKILL.md 同屏展示映射结果，用户确认后进 Phase 4
+
+**与生态的握手**：
+
+- darwin-skill：`python scripts/evolve_ir.py --config cognitive-config.yaml` 直接可进化
+  （血统链 config_version/parent 自动维护）
+- freud-skill：下次以该人物视角执行任务时，读 IR 作认知准备起点
+- 更新模式：IR 同步增量更新，`provenance.parent` 指向更新前的 config_version
+
+---
+
 ### Phase 4: 质量验证
 
 生成Skill后，用子agent执行3项测试（独立于主agent，避免自评偏差）：
@@ -599,6 +641,7 @@ Phase 4 验证通过后，自动启动双Agent精炼，进一步提升Skill可�
    - 新信息与现有模型矛盾 → 标注变化，更新模型
    - 出现新的思维模式 → 考虑增加新模型
 4. 更新SKILL.md中的「最新动态」section和调研时间
+5. 若存在 `cognitive-config.yaml`，同步增量更新 IR，`provenance.parent` 指向更新前的 config_version
 5. 不重写整个Skill，只增量更新
 
 ---
