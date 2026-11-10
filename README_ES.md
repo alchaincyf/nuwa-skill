@@ -232,7 +232,7 @@ Ingresa un nombre y Nuwa hace cinco cosas:
 
 **5. Validar** — pruebas a ciegas con agentes independientes: las mismas preguntas de tarea respondidas con y sin el skill, evaluadas por un juez que no sabe cuál es cuál, más las preguntas selladas y las de límite. Los resultados se escriben en FIDELITY.md, también cuando pierde.
 
-Dos formas de ejecutarlo: los modelos más capaces trabajan con libertad contra los criterios de cada paso; los modelos ligeros siguen paso a paso los manuales de `references/`. Los skills creados con v1.x se pueden actualizar («actualiza el skill de X»); si los archivos de investigación siguen ahí, no hace falta investigar de nuevo. Los skills de `examples/` siguen en formato v1.
+Dos formas de ejecutarlo: los modelos más capaces trabajan con libertad contra los criterios de cada paso; los modelos ligeros siguen paso a paso los manuales de `references/`. Los skills creados con v1.x se pueden actualizar («actualiza el skill de X»); si los archivos de investigación siguen ahí, no hace falta investigar de nuevo. En `examples/`, los skills de Munger y Steve Jobs ya están actualizados a v2; el resto sigue en formato v1.
 
 Los detalles del método están en `references/`: `research-playbook.md` (recopilación), `extraction-framework.md` (extracción), `validation-playbook.md` (validación).
 

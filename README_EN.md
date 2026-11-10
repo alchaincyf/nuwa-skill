@@ -230,7 +230,7 @@ Input a name, and Nuwa does five things:
 
 **5. Validate** — blind tests by independent agents: the same task questions answered with and without the skill, graded by a judge who does not know which is which, plus the sealed questions and boundary questions. Results go into FIDELITY.md, losses included.
 
-Two ways to run it: stronger models work freely against each step's pass criteria; lighter models follow the playbooks in `references/` step by step. Skills built with v1.x can be upgraded ("upgrade the X skill"); if the research files are still there, no new research is needed. The skills under `examples/` are still in v1 format.
+Two ways to run it: stronger models work freely against each step's pass criteria; lighter models follow the playbooks in `references/` step by step. Skills built with v1.x can be upgraded ("upgrade the X skill"); if the research files are still there, no new research is needed. Under `examples/`, the Munger and Steve Jobs skills have been upgraded to v2; the rest are still in v1 format.
 
 Method details live in `references/`: `research-playbook.md` (collection), `extraction-framework.md` (extraction), `validation-playbook.md` (validation).
 

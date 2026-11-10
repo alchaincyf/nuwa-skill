@@ -77,6 +77,10 @@ def count_surprises(content: str) -> dict:
     nxt = re.search(r'^#{1,2}\s+\S', tail, re.MULTILINE)
     seg = tail[:nxt.start()] if nxt else tail
     items = [l for l in seg.split('\n') if re.match(r'^\s*(?:[-*+]|\d+[.、)])\s+\S', l)]
+    if not items:
+        # 写成表格的：数表头和分隔线之外的行
+        rows = [l for l in seg.split('\n') if l.strip().startswith('|')]
+        items = [l for l in rows[2:] if not re.match(r'^\s*\|[\s:|-]+\|\s*$', l)]
     return {
         '推翻': sum(1 for l in items if '推翻' in l),
         '加深': sum(1 for l in items if '加深' in l),
@@ -98,11 +102,14 @@ def find_contradictions(files: dict[str, str]) -> list[str]:
 
 def main():
     if len(sys.argv) < 2:
-        print("用法: python3 merge_research.py <skill目录路径>")
+        print("用法: python3 merge_research.py <人物Skill目录>（含 references/research/ 的那一层）")
         sys.exit(1)
 
     skill_dir = Path(sys.argv[1])
     research_dir = skill_dir / 'references' / 'research'
+    # 直接传了 research 目录也认
+    if not research_dir.exists() and skill_dir.name == 'research' and skill_dir.is_dir():
+        research_dir = skill_dir
 
     if not research_dir.exists():
         print(f"❌ 目录不存在: {research_dir}")
@@ -144,6 +151,15 @@ def main():
             findings_str = findings_str[:37] + '...'
 
         rows.append(f"│ {label:<12} │ {stats['unique_urls']:<8} │ {findings_str:<24} │")
+
+    # 升级或补搜时新加的底稿（07-xxx.md 及以后）：只把「和先验不一样的地方」计入
+    for md_file in sorted(research_dir.glob('[0-9][0-9]-*.md')):
+        if md_file.stem in AGENTS or md_file.stem.startswith('00-'):
+            continue
+        sp = count_surprises(md_file.read_text(encoding='utf-8'))
+        if sp is not None:
+            for k in surprises:
+                surprises[k] += sp[k]
 
     # 矛盾检测
     contradictions = find_contradictions(files)

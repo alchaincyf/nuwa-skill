@@ -282,7 +282,7 @@ npx skills add alchaincyf/darwin-skill
 
 **5. 验证**——由独立agent盲测：同一组任务题，带Skill和不带Skill各答一遍，评审不知道哪份是哪份；再加封存题和边界题。结果写进FIDELITY.md，输了也照写。
 
-两种走法：能力强的模型按每一步的过关条件放手做，轻量模型照 `references/` 里的手册一步步走。v1.x 造出来的Skill可以说「升级XX」，调研底稿还在就不用重新调研。`examples/` 里的示例目前仍是v1格式。
+两种走法：能力强的模型按每一步的过关条件放手做，轻量模型照 `references/` 里的手册一步步走。v1.x 造出来的Skill可以说「升级XX」，调研底稿还在就不用重新调研。`examples/` 里芒格和乔布斯两个示例已升到v2，其余仍是v1格式。
 
 方法细节在 `references/`：`research-playbook.md`（采集）、`extraction-framework.md`（提炼）、`validation-playbook.md`（验证）。
 
