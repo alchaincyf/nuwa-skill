@@ -27,6 +27,7 @@
 |------|------|
 | [Future3lab/iran-skill](https://github.com/Future3lab/iran-skill) | 119文件的地缘政治分析OS，2500年波斯视角 |
 | [JerryZ01/qiuyuan-skill](https://github.com/JerryZ01/qiuyuan-skill) | 球员/教练思维蒸馏系统，女娲流程在体育领域的改编 |
+| [aa6788332/taleb-perspective](https://github.com/aa6788332/taleb-perspective) | 塔勒布思维操作系统：7心智模型+表达DNA+完整诚实边界，女娲深度档蒸馏，保真度A(100/100) |
 
 ## 收录你的项目
 
