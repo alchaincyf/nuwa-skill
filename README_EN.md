@@ -218,17 +218,21 @@ Full rules in [CONTRIBUTING.md](CONTRIBUTING.md). For existing community collect
 
 ## How It Works
 
-Input a name, and Nuwa does four things:
+Input a name, and Nuwa does five things:
 
-**1. Six parallel research streams** — writings, podcasts/interviews, social media, critic perspectives, decision records, life timeline. 6 agents running simultaneously, each archived.
+**1. Write a prior snapshot first** — before any research, write down what the model already knows about the person without looking anything up. Research then hunts for only three things: what overturns the snapshot, what goes deeper, and what is missing from it. Anything the model could already answer takes up no room in the skill.
 
-**2. Triple-verification extraction** — a claim must pass three tests before being recorded as a mental model: appears across 2+ domains (not a one-off statement), can predict positions on new questions (has predictive power), not something any smart person would think (has exclusivity). All three required.
+**2. Collect and seal** — writings, podcasts/interviews, social media, critic perspectives, decision records, life timeline, each archived. A set of the person's real decisions and complete answers is sealed away from the extraction step and kept as exam questions for the end.
 
-**3. Build the skill** — 3–7 mental models + 5–10 decision heuristics + expression DNA + values & anti-patterns + honest limits, written into SKILL.md.
+**3. Extract** — 5–8 moves (what the person concretely does when facing a type of problem), 3–7 mental models, decision heuristics, sourced case cards, at least 2 common misreadings, voice, tensions and limits. Mental models still pass triple verification: appears across 2+ domains, predicts positions on new questions, not something any smart person would think.
 
-**4. Quality validation** — test with 3 questions the person publicly answered; the direction must match. Then test with 1 question they never addressed; the skill should show appropriate uncertainty rather than false confidence.
+**4. Shape** — three layers: a SKILL.md of at most 350 lines, a casebook at `references/casebook.md`, and a quote bank at `references/voice.md`. Every skill carries seven runtime rules, such as "absent from the material does not mean the person never said it" and "keep real quotes and extrapolation apart".
 
-Full methodology in `references/extraction-framework.md`.
+**5. Validate** — blind tests by independent agents: the same task questions answered with and without the skill, graded by a judge who does not know which is which, plus the sealed questions and boundary questions. Results go into FIDELITY.md, losses included.
+
+Two ways to run it: stronger models work freely against each step's pass criteria; lighter models follow the playbooks in `references/` step by step. Skills built with v1.x can be upgraded ("upgrade the X skill"); if the research files are still there, no new research is needed. The skills under `examples/` are still in v1 format.
+
+Method details live in `references/`: `research-playbook.md` (collection), `extraction-framework.md` (extraction), `validation-playbook.md` (validation).
 
 ---
 
@@ -239,6 +243,8 @@ nuwa-skill/
 ├── SKILL.md                    # Nuwa herself
 ├── references/
 │   ├── extraction-framework.md # Extraction methodology (read this for depth)
+│   ├── research-playbook.md / validation-playbook.md / diagnose-playbook.md
+│   ├── special-cases.md / fidelity-scorecard.md
 │   └── skill-template.md       # Template for generating skills
 └── examples/
     ├── naval-perspective/       # Naval full example + research data

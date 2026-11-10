@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-合并6个Agent的调研结果，生成Phase 1.5调研Review检查点的摘要表格。
-扫描 references/research/ 目录下的01-06 md文件，统计每个维度的来源数量、
-一手/二手占比、关键发现。
+合并各路调研底稿，生成采集阶段结束时给用户看的摘要表格。
+扫描 references/research/ 下的 01-06 文件，统计每一路的来源数量、一手/二手占比、
+关键发现，以及「和先验不一样的地方」各有几条（推翻 / 加深 / 新增）。
 
 用法:
     python3 merge_research.py <skill目录路径>
@@ -16,6 +16,13 @@
 import sys
 import re
 from pathlib import Path
+
+# Windows 的 GBK 控制台打不出表格线和中文，统一成 UTF-8
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 
 AGENTS = {
     '01-writings': '著作',
@@ -61,6 +68,23 @@ def extract_key_findings(content: str, max_items: int = 3) -> list[str]:
     return [l[:50] + '...' if len(l) > 50 else l for l in lines[:max_items]]
 
 
+def count_surprises(content: str) -> dict:
+    """数「和先验不一样的地方」一段里推翻/加深/新增各几条。"""
+    m = re.search(r'^#+\s*.*(?:和先验不一样|先验).*$', content, re.MULTILINE)
+    if not m:
+        return None
+    tail = content[m.end():]
+    nxt = re.search(r'^#{1,2}\s+\S', tail, re.MULTILINE)
+    seg = tail[:nxt.start()] if nxt else tail
+    items = [l for l in seg.split('\n') if re.match(r'^\s*(?:[-*+]|\d+[.、)])\s+\S', l)]
+    return {
+        '推翻': sum(1 for l in items if '推翻' in l),
+        '加深': sum(1 for l in items if '加深' in l),
+        '新增': sum(1 for l in items if '新增' in l),
+        'total': len(items),
+    }
+
+
 def find_contradictions(files: dict[str, str]) -> list[str]:
     """简单检测跨文件矛盾（同一关键词出现不同判断）"""
     contradictions = []
@@ -86,6 +110,8 @@ def main():
 
     files = {}
     rows = []
+    surprises = {'推翻': 0, '加深': 0, '新增': 0, 'total': 0}
+    no_surprise_section = []
     total_sources = 0
     total_primary = 0
     total_secondary = 0
@@ -102,6 +128,12 @@ def main():
         files[key] = content
         stats = count_sources(content)
         findings = extract_key_findings(content)
+        sp = count_surprises(content)
+        if sp is None:
+            no_surprise_section.append(label)
+        else:
+            for k in surprises:
+                surprises[k] += sp[k]
 
         total_sources += stats['unique_urls']
         total_primary += stats['primary_markers']
@@ -118,7 +150,7 @@ def main():
 
     # 输出
     print("┌──────────────┬──────────┬──────────────────────────┐")
-    print("│ Agent        │ 来源数量  │ 关键发现                  │")
+    print("│ 调研分路      │ 来源数量  │ 关键发现                  │")
     print("├──────────────┼──────────┼──────────────────────────┤")
     for row in rows:
         print(row)
@@ -138,6 +170,16 @@ def main():
         print(f"│ 信息不足维度   │ 无       │ {'—':<24} │")
 
     print("└──────────────┴──────────┴──────────────────────────┘")
+
+    print(f"\n和先验不一样的地方：共 {surprises['total']} 条（推翻 {surprises['推翻']} / 加深 {surprises['加深']} / 新增 {surprises['新增']}）")
+    if no_surprise_section:
+        print(f"⚠️ 这几路底稿末尾没有「和先验不一样的地方」一段: {', '.join(no_surprise_section)}")
+    if surprises['total'] < 8:
+        print("⚠️ 不到 8 条，说明还在复述常识：换更深的来源（长访谈原文、早期文章、当事人回忆、批评文章）再找")
+    if not (research_dir / '00-prior.md').exists():
+        print("⚠️ 没有 00-prior.md（先验快照），无从判断哪些是增量")
+    if not (research_dir / 'holdout.md').exists():
+        print("提醒：还没有 holdout.md。提炼之前挑 3–5 件一手材料封存，留作验证的考题")
 
     # 总结
     if total_sources < 10:

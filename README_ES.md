@@ -220,17 +220,21 @@ Reglas completas en [CONTRIBUTING.md](CONTRIBUTING.md). Para colecciones comunit
 
 ## Cómo funciona
 
-Ingresa un nombre y Nuwa hace cuatro cosas:
+Ingresa un nombre y Nuwa hace cinco cosas:
 
-**1. Seis corrientes de investigación paralela** — escritos, podcasts/entrevistas, redes sociales, perspectivas de críticos, registros de decisiones, línea de vida. 6 agentes ejecutándose simultáneamente, cada uno archivando.
+**1. Escribir primero una instantánea previa** — antes de investigar, se anota lo que el modelo ya sabe de la persona sin consultar nada. La investigación busca solo tres cosas: lo que contradice esa instantánea, lo que va más hondo y lo que le falta. Lo que el modelo ya sabría responder no ocupa espacio en el skill.
 
-**2. Extracción de triple verificación** — una afirmación debe pasar tres pruebas para ser registrada como modelo mental: aparece en 2+ dominios (no es una declaración de una sola vez), puede predecir posiciones sobre nuevas preguntas (tiene poder predictivo), no es algo que cualquier persona inteligente pensaría (tiene exclusividad). Las tres son necesarias.
+**2. Recopilar y sellar** — escritos, podcasts/entrevistas, redes sociales, perspectivas de críticos, registros de decisiones, línea de vida, cada uno archivado. Un conjunto de decisiones reales y respuestas completas de la persona se sella fuera del paso de extracción y se guarda como examen final.
 
-**3. Construir el skill** — 3-7 modelos mentales + 5-10 heurísticas de decisión + ADN de expresión + valores y antipatrones + límites honestos, escritos en SKILL.md.
+**3. Extraer** — 5–8 jugadas (qué hace en concreto ante un tipo de problema), 3–7 modelos mentales, heurísticas de decisión, fichas de casos con fuente, al menos 2 malentendidos comunes, voz, tensiones y límites. Los modelos mentales siguen pasando la triple verificación: aparece en 2+ dominios, predice posiciones sobre preguntas nuevas, no es algo que pensaría cualquier persona inteligente.
 
-**4. Validación de calidad** — prueba con 3 preguntas que la persona respondió públicamente; la dirección debe coincidir. Luego prueba con 1 pregunta que nunca discutió; el skill debería mostrar incertidumbre apropiada en lugar de falsa confianza.
+**4. Dar forma** — tres capas: un SKILL.md de 350 líneas como máximo, un libro de casos en `references/casebook.md` y un banco de citas en `references/voice.md`. Cada skill lleva siete reglas de ejecución, como «que no esté en el material no significa que nunca lo dijera» y «separar las citas reales de la extrapolación».
 
-Metodología completa en `references/extraction-framework.md`.
+**5. Validar** — pruebas a ciegas con agentes independientes: las mismas preguntas de tarea respondidas con y sin el skill, evaluadas por un juez que no sabe cuál es cuál, más las preguntas selladas y las de límite. Los resultados se escriben en FIDELITY.md, también cuando pierde.
+
+Dos formas de ejecutarlo: los modelos más capaces trabajan con libertad contra los criterios de cada paso; los modelos ligeros siguen paso a paso los manuales de `references/`. Los skills creados con v1.x se pueden actualizar («actualiza el skill de X»); si los archivos de investigación siguen ahí, no hace falta investigar de nuevo. Los skills de `examples/` siguen en formato v1.
+
+Los detalles del método están en `references/`: `research-playbook.md` (recopilación), `extraction-framework.md` (extracción), `validation-playbook.md` (validación).
 
 ---
 
@@ -241,6 +245,8 @@ nuwa-skill/
 ├── SKILL.md                    # Nuwa misma
 ├── references/
 │   ├── extraction-framework.md # Metodología de extracción (léelo para profundizar)
+│   ├── research-playbook.md / validation-playbook.md / diagnose-playbook.md
+│   ├── special-cases.md / fidelity-scorecard.md
 │   └── skill-template.md       # Plantilla para generar skills
 └── examples/
     ├── naval-perspective/       # Ejemplo completo de Naval + datos de investigación

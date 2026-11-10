@@ -270,17 +270,21 @@ npx skills add alchaincyf/darwin-skill
 
 ## 工作原理
 
-输入一个名字后，女娲做四件事：
+输入一个名字后，女娲做五件事：
 
-**1. 六路并行采集**——著作、播客/访谈、社交媒体、批评者视角、决策记录、人生时间线，6个Agent同时跑，各自存档。
+**1. 先写先验快照**——调研之前，先把模型不查资料就知道的内容写下来。之后的调研只找三种东西：推翻它的、比它深的、它没有的。模型本来就答得出的内容，不占Skill的篇幅。
 
-**2. 三重验证提炼**——一个观点要被收录为心智模型，必须：跨2+个领域出现过（不是随口一说）、能推断对新问题的立场（有预测力）、不是所有聪明人都会这么想（有排他性）。三个都过才收录。
+**2. 采集与封存**——著作、播客/访谈、社交媒体、批评者视角、决策记录、人生时间线，各自存档。同时封存一批此人真实做过的决策和完整回答，不给提炼环节看，留到最后当考题。
 
-**3. 构建Skill**——3-7个心智模型 + 5-10条决策启发式 + 表达DNA + 价值观与反模式 + 诚实边界，写入SKILL.md。
+**3. 提炼**——5–8个招式（遇到某类问题时他具体怎么做）、3–7个心智模型、决策启发式、带出处的案例卡、至少2条常见误读、声音、张力与边界。心智模型仍要过三重验证：跨2+个领域出现过、能推断对新问题的立场、不是所有聪明人都会这么想。
 
-**4. 质量验证**——拿3个此人公开回答过的问题测试，方向一致才通过。再用1个他没讨论过的问题测试，Skill应该表现出适度不确定而非斩钉截铁。
+**4. 成形**——产物分三层：350行以内的SKILL.md、案例库 `references/casebook.md`、原话库 `references/voice.md`。每个Skill自带七条运行纪律，比如「材料里没有，不等于他没说过」「原话和推演分开说」。
 
-完整方法论在 `references/extraction-framework.md`。
+**5. 验证**——由独立agent盲测：同一组任务题，带Skill和不带Skill各答一遍，评审不知道哪份是哪份；再加封存题和边界题。结果写进FIDELITY.md，输了也照写。
+
+两种走法：能力强的模型按每一步的过关条件放手做，轻量模型照 `references/` 里的手册一步步走。v1.x 造出来的Skill可以说「升级XX」，调研底稿还在就不用重新调研。`examples/` 里的示例目前仍是v1格式。
+
+方法细节在 `references/`：`research-playbook.md`（采集）、`extraction-framework.md`（提炼）、`validation-playbook.md`（验证）。
 
 ---
 
@@ -291,6 +295,8 @@ nuwa-skill/
 ├── SKILL.md                      # 女娲本体
 ├── references/
 │   ├── extraction-framework.md   # 提炼方法论（想深入了解看这个）
+│   ├── research-playbook.md / validation-playbook.md / diagnose-playbook.md
+│   ├── special-cases.md / fidelity-scorecard.md
 │   └── skill-template.md         # 生成Skill的模板
 └── examples/                          # 13个人物 + 1个主题，含完整调研数据
     ├── steve-jobs-perspective/        # ⭐ 乔布斯（含实战对话记录）
