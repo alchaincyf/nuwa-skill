@@ -14,6 +14,13 @@ import sys
 import re
 from pathlib import Path
 
+# Windows 的 GBK 控制台打不出 ✅ 和中文，统一成 UTF-8
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, OSError):
+        pass
+
 
 def clean_srt(content: str) -> str:
     """清洗SRT格式字幕"""
