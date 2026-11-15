@@ -243,6 +243,7 @@ Sahil的飞轮由三层组成：
 ### 2.6 变现路径
 
 **产品矩阵**：
+
 | 产品 | 价格区间 | 来源 |
 |------|----------|------|
 | 入门级产品 | <$50 | [Sell Me Well](https://sellmewell.com/sale-legends/justin-welsh-million-dollar-empire/) |
