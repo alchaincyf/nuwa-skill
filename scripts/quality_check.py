@@ -137,7 +137,7 @@ def check_common(rep, root, text, fm, body):
                     "删掉长尾关键词；负责命中的是人名和专属概念")
         else:
             rep.add(OK, "description", f"{n} 字")
-        if not re.search(r"视角|怎么看|perspective|切换到", desc, re.IGNORECASE):
+        if not re.search(r"视角|怎么看|切换到|perspective|what would \S+ think|'s take|channel |in \S+ voice|think like", desc, re.IGNORECASE):
             rep.add(WARN, "触发语", "description 里没有明确的触发语", "加上「用XX的视角」「XX会怎么看」这类说法")
 
     n_lines = text.count("\n") + 1
@@ -171,9 +171,9 @@ def check_sources(rep, secs):
     mode = None
     for line in text.split("\n"):
         if re.match(r"^(#{3,}|\*\*)", line.strip()):
-            if re.search(r"一手|primary", line, re.IGNORECASE):
+            if re.search(r"一手|primary|first-?hand", line, re.IGNORECASE):
                 mode = "p"
-            elif re.search(r"二手|secondary", line, re.IGNORECASE):
+            elif re.search(r"二手|secondary|second-?hand", line, re.IGNORECASE):
                 mode = "s"
             else:
                 mode = None
@@ -203,7 +203,7 @@ def check_boundary(rep, secs, v2):
         rep.add(BAD, "局限", f"边界一节只有 {n} 条列表项", "至少 3 条具体局限（哪段时间、哪类材料、哪个领域信息不足）")
     else:
         rep.add(OK, "局限", f"{n} 条")
-    if not re.search(r"调研时间|截至|as of", text, re.IGNORECASE):
+    if not re.search(r"调研时间|截至|as of|cutoff|cut-off|researched|distilled|updated|through 20\d\d", text, re.IGNORECASE):
         rep.add(BAD, "调研时间", "没写调研时间", "加一行「调研时间：YYYY-MM-DD，之后的变化没有覆盖」")
     if not v2:
         return
