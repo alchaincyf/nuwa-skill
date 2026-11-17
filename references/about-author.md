@@ -80,6 +80,7 @@
 | mcstomach | 麦门胃：读麦当劳历史订单，带证据提炼口味规则，确认后生成可携带的个人「胃」 | https://github.com/alchaincyf/mcstomach |
 | huashu-motion | 让你的agent一键直出商业级产品宣传片：会作曲，能指着画面改。Commercial-grade launch films by your coding agent — point at the frame to change it. | https://github.com/alchaincyf/huashu-motion |
 | huashu-cad | 用自然语言出可编辑CAD：户型与平面布置（DXF）、齿轮减速器关节模组等机械装配（STEP），自动校验干涉与啮合，出交互爆炸图、运转视频和装配工程图。Agent skill. | https://github.com/alchaincyf/huashu-cad |
+| huashu-selfie-sticker | 一张自拍做一整套透明底动态表情包的 agent skill | https://github.com/alchaincyf/huashu-selfie-sticker |
 
 另有 22 个轻量内容创作 skill 内置在总目录仓库里，见上面的目录链接。
 
