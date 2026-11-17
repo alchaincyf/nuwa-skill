@@ -203,7 +203,7 @@ def check_boundary(rep, secs, v2):
         rep.add(BAD, "局限", f"边界一节只有 {n} 条列表项", "至少 3 条具体局限（哪段时间、哪类材料、哪个领域信息不足）")
     else:
         rep.add(OK, "局限", f"{n} 条")
-    if not re.search(r"调研时间|截至|as of|cutoff|cut-off|researched|distilled|updated|through 20\d\d", text, re.IGNORECASE):
+    if not re.search(r"调研时间|截至|as of|(cut-?off|researched|distilled|updated|through)[^\n]{0,30}?(19|20)\d\d", text, re.IGNORECASE):
         rep.add(BAD, "调研时间", "没写调研时间", "加一行「调研时间：YYYY-MM-DD，之后的变化没有覆盖」")
     if not v2:
         return
